@@ -1,0 +1,16 @@
+[
+  {
+    "section": "Start",
+    "items": [
+      { "title": "Overview", "slug": "overview" },
+      { "title": "Quickstart", "slug": "quickstart" }
+    ]
+  },
+  {
+    "section": "Reference",
+    "items": [
+      { "title": "CLI Reference", "slug": "cli-reference" },
+      { "title": "Command Index", "slug": "commands" }
+    ]
+  }
+]
