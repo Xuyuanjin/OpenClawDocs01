@@ -1,25 +1,25 @@
-# Quickstart
+﻿# Quickstart
 
 <div class="card-grid">
   <a class="card" href="#step-setup">
     <div class="card-title">Setup</div>
     <div class="card-desc">Workspace, wizard, and base config.</div>
-    <div class="card-cta">Jump →</div>
+    <div class="card-cta">Jump -&gt;</div>
   </a>
   <a class="card" href="#step-onboard">
     <div class="card-title">Onboarding</div>
     <div class="card-desc">Run the CLI onboarding flow.</div>
-    <div class="card-cta">Jump →</div>
+    <div class="card-cta">Jump -&gt;</div>
   </a>
   <a class="card" href="#step-config">
     <div class="card-title">Models & Channels</div>
     <div class="card-desc">Configure models, channels, and secrets.</div>
-    <div class="card-cta">Jump →</div>
+    <div class="card-cta">Jump -&gt;</div>
   </a>
   <a class="card" href="#step-health">
     <div class="card-title">Health & Logs</div>
     <div class="card-desc">Check status and diagnose issues.</div>
-    <div class="card-cta">Jump →</div>
+    <div class="card-cta">Jump -&gt;</div>
   </a>
 </div>
 

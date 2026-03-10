@@ -1,13 +1,11 @@
-# CLI 参考
-
+﻿# CLI 参考
 ## 全局参数（每行含说明）
-
 | 参数 | 说明 |
 | --- | --- |
 | `--dev` | 启用开发模式。 |
 | `-g, --global` | 指定全局配置目录。 |
 | `--json` | 以 JSON 形式输出。 |
-| `--no-color` | 禁用颜色输出。 |
+| `--no-color` | 禁用彩色输出。 |
 | `-p, --profile` | 选择 profile。 |
 | `--plain` | 纯文本输出。 |
 | `--update` | 检查更新。 |
@@ -15,11 +13,10 @@
 | `-w, --workspace` | 指定工作区路径。 |
 
 ## 命令入口（每行含说明）
-
 | 命令 | 说明 |
 | --- | --- |
 | `openclaw setup` | 初始化 OpenClaw 配置与工作区。 |
-| `openclaw onboard` | 运行 CLI 引导流程，完成基本配置。 |
+| `openclaw onboard` | 运行 CLI 引导流程，完成基础配置。 |
 | `openclaw configure` | 打开交互式配置向导。 |
 | `openclaw config` | 打开配置向导或执行 get/set/unset。 |
 | `openclaw doctor` | 运行健康检查并给出修复建议。 |

@@ -1,52 +1,51 @@
-# 命令大全
+﻿# 命令大全
 
-本页按场景整理常用命令，并确保**每行命令都有对应说明**。
-
+本页按场景整理常用命令，并确保每行命令都有对应说明。
 <div class="card-grid">
   <a class="card" href="#setup">
     <div class="card-title">初始化与配置</div>
     <div class="card-desc">setup / onboard / configure / config / doctor</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#health">
     <div class="card-title">状态与日志</div>
     <div class="card-desc">status / health / logs / dashboard</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#gateway">
     <div class="card-title">网关与服务</div>
     <div class="card-desc">gateway 运行、探测、服务管理</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#channels">
     <div class="card-title">通道与消息</div>
     <div class="card-desc">channels / message</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#agents">
     <div class="card-title">代理与会话</div>
     <div class="card-desc">agent / agents / sessions</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#models">
     <div class="card-title">模型与回退</div>
     <div class="card-desc">models / aliases / fallbacks</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#tools">
     <div class="card-title">工具与自动化</div>
     <div class="card-desc">browser / cron</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#extensions">
     <div class="card-title">插件、技能与审批</div>
     <div class="card-desc">plugins / skills / approvals</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
   <a class="card" href="#system">
     <div class="card-title">系统与维护</div>
     <div class="card-desc">sandbox / docs / update / uninstall</div>
-    <div class="card-cta">查看命令 →</div>
+    <div class="card-cta">查看命令 -&gt;</div>
   </a>
 </div>
 
@@ -66,7 +65,7 @@
 | `openclaw config set gateway.port 19001 --json` | 设置配置键并以 JSON 解析值。 |
 | `openclaw config unset tools.web.search.apiKey` | 删除配置键。 |
 | `openclaw doctor` | 运行健康检查并定位常见问题。 |
-| `openclaw doctor --fix` | 尝试自动修复检测到的问题。 |
+| `openclaw doctor --fix` | 自动修复检测到的问题。 |
 
 <h2 id="health">状态与日志</h2>
 
@@ -74,10 +73,10 @@
 | --- | --- |
 | `openclaw status` | 获取状态摘要。 |
 | `openclaw status --all` | 输出更全面的状态信息。 |
-| `openclaw status --deep` | 启用深度探测，获得更多细节。 |
+| `openclaw status --deep` | 启用深度探测，获取更多细节。 |
 | `openclaw health --json` | 健康检查并以 JSON 输出。 |
 | `openclaw dashboard` | 启动并打开控制台界面。 |
-| `openclaw dashboard --no-open` | 仅启动服务，不自动打开浏览器。 |
+| `openclaw dashboard --no-open` | 只启动服务，不自动打开浏览器。 |
 | `openclaw logs` | 查看日志列表或摘要。 |
 | `openclaw logs --follow` | 实时跟踪日志输出。 |
 | `openclaw logs --limit 500` | 限制输出行数。 |
@@ -152,7 +151,7 @@
 | 命令 | 说明 |
 | --- | --- |
 | `openclaw browser --browser-profile chrome tabs` | 列出指定浏览器 profile 的标签页。 |
-| `openclaw browser snapshot --format aria` | 生成页面快照并以 ARIA 格式输出。 |
+| `openclaw browser snapshot --format aria` | 生成页面快照并以 ARIA 输出。 |
 | `openclaw browser open https://docs.openclaw.ai` | 打开指定网址。 |
 | `openclaw browser click <ref>` | 对引用元素执行点击操作。 |
 | `openclaw browser type <ref> "hello"` | 向目标元素输入文本。 |
@@ -202,4 +201,4 @@
 | `openclaw uninstall --all --yes` | 无提示卸载全部组件。 |
 | `openclaw uninstall --dry-run` | 预览卸载范围，不实际执行。 |
 
-> 以上命令来自官方 CLI 文档，更多参数请用 `openclaw <command> --help` 查看。
+> 更多参数请使用 `openclaw <command> --help` 查看。

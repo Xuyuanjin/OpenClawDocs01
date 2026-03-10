@@ -115,7 +115,7 @@ This page groups common commands by scenario and ensures **every command line ha
 | `openclaw channels login --channel whatsapp` | Log in to a channel account. |
 | `openclaw channels logout --channel whatsapp` | Log out of a channel account. |
 | `openclaw message <subcommand> [flags]` | Messaging entry point (send/poll/react/etc.). |
-| `openclaw message poll --channel discord --target channel:123 --poll-question "Snack?" --poll-option Pizza --poll-option Sushi` | Create a poll in Discord. |
+| `openclaw message poll --channel discord --target channel:123 --poll-question "Snack->" --poll-option Pizza --poll-option Sushi` | Create a poll in Discord. |
 
 <h2 id="agents">Agents & Sessions</h2>
 
