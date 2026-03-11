@@ -1,4 +1,4 @@
-﻿<div class="hero">
+<div class="hero">
   <div class="hero-card code-card side-card">
     <div class="card-title">Common Commands (Setup)</div>
     <table>

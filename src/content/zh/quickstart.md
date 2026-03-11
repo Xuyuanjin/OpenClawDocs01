@@ -1,4 +1,4 @@
-﻿# 快速开始
+# 快速开始
 
 <div class="card-grid">
   <a class="card" href="#step-setup">

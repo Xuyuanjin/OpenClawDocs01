@@ -1,4 +1,4 @@
-﻿<div class="hero">
+<div class="hero">
   <div class="hero-card code-card side-card">
     <div class="card-title">常用命令速览（配置）</div>
     <table>

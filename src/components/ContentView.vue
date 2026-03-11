@@ -105,13 +105,23 @@ const enhanceCopyButtons = () => {
     if (table.dataset.copyEnhanced === 'true') return
     table.querySelectorAll('tbody tr').forEach((row) => {
       const codeEl = row.querySelector('code')
-      if (!codeEl || codeEl.parentElement.querySelector('.copy-btn')) return
+      if (!codeEl) return
+
+      const cell = codeEl.parentElement
+      if (!cell || cell.querySelector('.copy-btn')) return
+
+      const wrapper = document.createElement('div')
+      wrapper.className = 'table-command'
+
       const button = document.createElement('button')
       button.type = 'button'
       button.className = 'copy-btn inline'
       button.dataset.copy = codeEl.textContent || ''
       button.textContent = copyLabel.value
-      codeEl.after(button)
+
+      cell.insertBefore(wrapper, codeEl)
+      wrapper.appendChild(codeEl)
+      wrapper.appendChild(button)
     })
     table.dataset.copyEnhanced = 'true'
   })
@@ -169,3 +179,4 @@ watch([lang, slug], load, { immediate: true })
 
 onMounted(load)
 </script>
+

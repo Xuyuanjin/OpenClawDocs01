@@ -1,4 +1,4 @@
-﻿# Quickstart
+# Quickstart
 
 <div class="card-grid">
   <a class="card" href="#step-setup">
