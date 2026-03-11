@@ -517,15 +517,15 @@ a:hover {
 }
 
 .table-command {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
 }
 
 .table-command code {
-  flex: 1 1 auto;
   min-width: 0;
+  max-width: 100%;
   line-height: 1.45;
 }
 
@@ -917,6 +917,11 @@ a:hover {
     table-layout: auto;
   }
 
+  .hero-card table th:first-child,
+  .hero-card table td:first-child {
+    width: auto;
+  }
+
   .hero-card table code,
   .doc table code {
     white-space: normal;
@@ -924,9 +929,38 @@ a:hover {
     overflow-wrap: anywhere;
   }
 
+  .hero-card .table-command {
+    grid-template-columns: 1fr;
+    align-items: start;
+    row-gap: 8px;
+  }
+
   .hero-card .table-command code {
+    display: block;
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
     overflow: visible;
     text-overflow: clip;
+  }
+
+  .table-command {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .table-command code {
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .copy-btn.inline {
+    justify-self: start;
+    align-self: start;
   }
 }
 
