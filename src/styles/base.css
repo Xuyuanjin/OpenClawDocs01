@@ -221,6 +221,7 @@ a:hover {
   flex: 1;
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
+  align-items: start;
   gap: 28px;
   padding: 28px;
 }
@@ -232,15 +233,16 @@ a:hover {
 
 .sidenav {
   position: sticky;
-  top: calc(var(--topbar-height) + 12px);
+  top: 28px;
   align-self: start;
-  padding: 18px;
+  margin-top: 0;
+  padding: 20px 18px;
   border-radius: 20px;
   background: var(--glass);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(18px) saturate(140%);
   box-shadow: var(--shadow);
-  max-height: calc(100vh - var(--topbar-height) - 34px);
+  max-height: calc(100vh - var(--topbar-height) - 56px);
   overflow: auto;
 }
 
@@ -283,6 +285,10 @@ a:hover {
   margin: 18px 0 8px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+}
+
+.sidenav-body > .sidenav-section:first-child {
+  margin-top: 0;
 }
 
 .sidenav-link {
@@ -811,6 +817,7 @@ a:hover {
     top: 0;
     left: 0;
     height: 100vh;
+    margin-top: 0;
     max-height: none;
     width: min(320px, 86vw);
     transform: translateX(-110%);
@@ -958,6 +965,7 @@ a:hover {
     font-size: clamp(1.6rem, 8vw, 2.2rem);
   }
 }
+
 
 
 
