@@ -1,20 +1,6 @@
 ﻿<div class="hero">
-  <div class="hero-card">
-    <div class="eyebrow">OpenClaw CLI</div>
-    <h1>OpenClaw Docs</h1>
-    <p>A command-first workspace for automation and intelligent agents. Covers onboarding, gateway operations, channels, messages, models, and plugins.</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="/en/quickstart">Quickstart</a>
-      <a class="btn ghost" href="/en/commands">Command Index</a>
-    </div>
-    <div class="meta-row">
-      <span class="pill">Glass UI</span>
-      <span class="pill">Bilingual</span>
-      <span class="pill">CLI First</span>
-    </div>
-  </div>
-  <div class="hero-card code-card">
-    <div class="card-title">Common Commands (with explanations)</div>
+  <div class="hero-card code-card side-card">
+    <div class="card-title">Common Commands (Setup)</div>
     <table>
       <thead>
         <tr>
@@ -35,6 +21,33 @@
           <td><code>openclaw config get gateway.auth.token</code></td>
           <td>Read a specific config key (example: gateway token).</td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hero-card primary-card">
+    <div class="eyebrow">OpenClaw CLI</div>
+    <h1>OpenClaw Docs</h1>
+    <p>A command-first workspace for automation and intelligent agents. Covers onboarding, gateway operations, channels, messages, models, and plugins.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="/en/quickstart">Quickstart</a>
+      <a class="btn ghost" href="/en/commands">Command Index</a>
+    </div>
+    <div class="meta-row">
+      <span class="pill">Glass UI</span>
+      <span class="pill">Bilingual</span>
+      <span class="pill">CLI First</span>
+    </div>
+  </div>
+  <div class="hero-card code-card side-card">
+    <div class="card-title">Common Commands (Ops)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>What it does</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>openclaw gateway status</code></td>
           <td>Check gateway status, with optional RPC probing.</td>
@@ -42,6 +55,10 @@
         <tr>
           <td><code>openclaw logs --follow</code></td>
           <td>Follow gateway logs in real time.</td>
+        </tr>
+        <tr>
+          <td><code>openclaw status --all</code></td>
+          <td>Show a more complete status summary for quick verification.</td>
         </tr>
       </tbody>
     </table>

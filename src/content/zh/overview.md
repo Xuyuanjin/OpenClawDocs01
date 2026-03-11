@@ -1,20 +1,6 @@
 ﻿<div class="hero">
-  <div class="hero-card">
-    <div class="eyebrow">OpenClaw CLI</div>
-    <h1>OpenClaw 文档</h1>
-    <p>面向自动化与智能代理的命令行工作台。覆盖初始化、网关、通道与消息、模型与插件的完整操作路径。</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="/zh/quickstart">快速开始</a>
-      <a class="btn ghost" href="/zh/commands">命令大全</a>
-    </div>
-    <div class="meta-row">
-      <span class="pill">Glass UI</span>
-      <span class="pill">Bilingual</span>
-      <span class="pill">CLI First</span>
-    </div>
-  </div>
-  <div class="hero-card code-card">
-    <div class="card-title">常用命令速览（每行含说明）</div>
+  <div class="hero-card code-card side-card">
+    <div class="card-title">常用命令速览（配置）</div>
     <table>
       <thead>
         <tr>
@@ -35,6 +21,33 @@
           <td><code>openclaw config get gateway.auth.token</code></td>
           <td>读取指定配置键，用于确认网关令牌与连接信息。</td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hero-card primary-card">
+    <div class="eyebrow">OpenClaw CLI</div>
+    <h1>OpenClaw 文档</h1>
+    <p>面向自动化与智能代理的命令行工作台。覆盖初始化、网关、通道与消息、模型与插件的完整操作路径。</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="/zh/quickstart">快速开始</a>
+      <a class="btn ghost" href="/zh/commands">命令大全</a>
+    </div>
+    <div class="meta-row">
+      <span class="pill">Glass UI</span>
+      <span class="pill">Bilingual</span>
+      <span class="pill">CLI First</span>
+    </div>
+  </div>
+  <div class="hero-card code-card side-card">
+    <div class="card-title">常用命令速览（运行）</div>
+    <table>
+      <thead>
+        <tr>
+          <th>命令</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>openclaw gateway status</code></td>
           <td>查看网关服务状态，并可附带 RPC 探测。</td>
@@ -42,6 +55,10 @@
         <tr>
           <td><code>openclaw logs --follow</code></td>
           <td>实时跟踪网关日志，便于排查故障。</td>
+        </tr>
+        <tr>
+          <td><code>openclaw status --all</code></td>
+          <td>输出更全面的状态摘要，便于快速确认当前运行状态。</td>
         </tr>
       </tbody>
     </table>
