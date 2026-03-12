@@ -12,13 +12,14 @@
 
 <script setup>
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import anchor from 'markdown-it-anchor'
 import linkAttributes from 'markdown-it-link-attributes'
 import { loadMarkdown } from '../content'
 
 const route = useRoute()
+const router = useRouter()
 
 const html = ref('')
 const fallback = ref(false)
@@ -62,6 +63,55 @@ const extractTitle = (raw) => {
   if (!raw) return 'OpenClaw Docs'
   const line = raw.split('\n').find((row) => row.startsWith('# '))
   return line ? line.replace(/^#\s+/, '').trim() : 'OpenClaw Docs'
+}
+
+const scrollToHash = (hash) => {
+  if (!hash) return
+  const element = document.querySelector(hash)
+  if (!element) return
+  const topOffset = 112
+  const top = element.getBoundingClientRect().top + window.scrollY - topOffset
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
+const isInternalHref = (href) => {
+  if (!href) return false
+  if (/^(https?:|mailto:|tel:)/i.test(href)) return false
+  if (href.startsWith('#')) return true
+
+  const url = new URL(href, window.location.origin)
+  return url.origin === window.location.origin
+}
+
+const navigateInternalLink = async (href) => {
+  if (!isInternalHref(href)) return false
+
+  if (href.startsWith('#')) {
+    if (route.hash === href) {
+      window.history.replaceState(null, '', `${route.path}${href}`)
+      scrollToHash(href)
+      return true
+    }
+
+    await router.push({
+      path: route.path,
+      query: route.query,
+      hash: href
+    })
+    return true
+  }
+
+  const url = new URL(href, window.location.origin)
+  if (url.origin !== window.location.origin) return false
+
+  const target = `${url.pathname}${url.search}${url.hash}`
+  if (target === route.fullPath) {
+    if (url.hash) scrollToHash(url.hash)
+    return true
+  }
+
+  await router.push(target)
+  return true
 }
 
 const enhanceCopyButtons = () => {
@@ -127,11 +177,31 @@ const enhanceCopyButtons = () => {
   })
 }
 
-const bindCopyListener = () => {
+const bindDocListener = () => {
   if (listenerBound || !docRef.value) return
   docRef.value.addEventListener('click', async (event) => {
     const target = event.target
     if (!(target instanceof HTMLElement)) return
+
+    const link = target.closest('a[href]')
+    if (
+      link instanceof HTMLAnchorElement &&
+      !link.hasAttribute('download') &&
+      link.target !== '_blank' &&
+      event.button === 0 &&
+      !event.metaKey &&
+      !event.ctrlKey &&
+      !event.shiftKey &&
+      !event.altKey
+    ) {
+      const href = link.getAttribute('href') || ''
+      if (isInternalHref(href)) {
+        event.preventDefault()
+        await navigateInternalLink(href)
+        return
+      }
+    }
+
     if (!target.classList.contains('copy-btn')) return
     const content = target.dataset.copy || ''
 
@@ -172,7 +242,7 @@ const load = async () => {
 
   await nextTick()
   enhanceCopyButtons()
-  bindCopyListener()
+  bindDocListener()
 }
 
 watch([lang, slug], load, { immediate: true })
